@@ -1,0 +1,119 @@
+[project]
+name = "single_cell_scanpy_studies"
+version = "0.1.0"
+description = "Scanpy Studies"
+requires-python = ">=3.12"
+
+dependencies = [
+    # Single-cell
+    "scanpy[leiden]>=1.12",
+    "anndata>=0.12",
+    "scikit-misc",
+    "scikit-image",
+    "pyranges",
+    "pooch",
+    # Core
+    "numpy>=2.1,<3",
+    "pandas>=2.3,<3",
+    "scipy>=1.14",
+    "scikit-learn>=1.6",
+    "scikit-posthocs>=0.12.0",
+    "matplotlib>=3.10,<3.12",
+    "seaborn>=0.13.2,<0.14",
+    "networkx>=3.4",
+    # Clustering
+    "umap-learn>=0.5.12,<0.6",
+    "numba>=0.61",
+    "hdbscan>=0.8.40,<0.9",   # or drop for sklearn.cluster.HDBSCAN
+    "pysam>=0.23,<0.24",
+    # Streamlit UI
+    "streamlit>=1.40",
+    "streamlit-aggrid>=1.0",
+    # drop the protobuf pin entirely; drop "combat"; dedupe duckdb/plotly
+    "protobuf==3.20.*",
+    "altair<6",
+    "click>=8.1,<8.2",
+    "biopython",
+    "biomart",
+    "gseapy",
+    "mygene",
+    "duckdb",
+    "pybiopax",
+    "combat",
+    "inmoose",
+    # Core
+    "pyarrow>=14,<23",
+    "requests>=2.31",
+    "tqdm>=4.66",
+    "python-dotenv>=1.0",
+    "fastcluster",
+    "kaleido",
+    "psutil",
+    "torch",
+    "cellxgene_census",
+    "huggingface-hub",
+    "datasets",
+    "wandb",
+    "duckdb",
+    "lifelines",
+    # Dash / Cytoscape web graph
+    "dash>=2.16",
+    "dash-cytoscape>=1.0",
+    "dash-bootstrap-components",
+    # Graph / pathway parsing
+    "rdflib>=7.0",
+    "pyvis>=0.3.2",
+    "py4cytoscape>=1.10",
+    # Plotting
+    "plotly>=5.20",
+    "matplotlib_venn",
+    "pycirclize",
+    "markdown-pdf",
+    # PDF / papers
+    "pypdf>=4.0",
+    # Jupyter/dev
+    "ipykernel>=6.29",
+    "jupyterlab>=4.0",
+    "scikit-image>=0.26.0",
+]
+
+
+[project.optional-dependencies]
+llm = [
+    "langchain>=0.2",
+    "langchain-openai>=0.1",
+    "langchain-chroma>=0.1",
+    "chromadb>=0.5",
+    "openai>=1.40",
+]
+
+dev = [
+    "ruff>=0.5",
+    "pytest>=8.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 100
+exclude = [
+    "*.ipynb",
+    "notebooks/",
+    "src/libs/backup/",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = [
+    "E501",
+    "E402",
+]
+
+# sudo apt install graphviz graphviz-dev pkg-config
+
+# uv sync --extra dev
+
+# ruff check .
+# ruff check . --fix
+
