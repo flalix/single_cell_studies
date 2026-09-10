@@ -12,6 +12,7 @@ dependencies = [
     "scikit-image",
     "pyranges",
     "pooch",
+    "harmonypy==0.0.10",
     # Core
     "numpy>=2.1,<3",
     "pandas>=2.3,<3",

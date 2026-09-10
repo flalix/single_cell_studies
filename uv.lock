@@ -1784,6 +1784,21 @@ wheels = [
 ]
 
 [[package]]
+name = "harmonypy"
+version = "0.0.10"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "scikit-learn" },
+    { name = "scipy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/1a/69/9af6183745618057797b940a76320c52a38ad2a69e688e6345e2a0219655/harmonypy-0.0.10.tar.gz", hash = "sha256:27bd39a6f9ada1708ffa577e46c9b7363d1e2fd62740e477ce11fd61819a54df", size = 20339, upload-time = "2024-07-04T20:55:06.385Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/cc/cd/9479dd66e503af191edc016a302d2125c4f02ea777ebea1e48f6b944b073/harmonypy-0.0.10-py3-none-any.whl", hash = "sha256:dab528052f909204e521c9c2bd980221c64003538b0c0fe25be2e43c1199282b", size = 20885, upload-time = "2024-07-04T20:55:00.329Z" },
+]
+
+[[package]]
 name = "hdbscan"
 version = "0.8.44"
 source = { registry = "https://pypi.org/simple" }
@@ -6051,6 +6066,7 @@ dependencies = [
     { name = "duckdb" },
     { name = "fastcluster" },
     { name = "gseapy" },
+    { name = "harmonypy" },
     { name = "hdbscan" },
     { name = "huggingface-hub" },
     { name = "inmoose" },
@@ -6126,6 +6142,7 @@ requires-dist = [
     { name = "duckdb" },
     { name = "fastcluster" },
     { name = "gseapy" },
+    { name = "harmonypy", specifier = "==0.0.10" },
     { name = "hdbscan", specifier = ">=0.8.40,<0.9" },
     { name = "huggingface-hub" },
     { name = "inmoose" },
@@ -6163,6 +6180,7 @@ requires-dist = [
     { name = "requests", specifier = ">=2.31" },
     { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.5" },
     { name = "scanpy", extras = ["leiden"], specifier = ">=1.12" },
+    { name = "scikit-image" },
     { name = "scikit-image", specifier = ">=0.26.0" },
     { name = "scikit-learn", specifier = ">=1.6" },
     { name = "scikit-misc" },
